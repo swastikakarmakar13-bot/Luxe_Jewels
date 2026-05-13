@@ -6,14 +6,13 @@
 body{
     min-height: 150vh;
     width: 100vw;
-    background-color: black;
-    background-image: url(body.jpg);
+    background-color:rgb(255, 255, 253);
     backdrop-filter: blur(6px);
 }
 .navbar{
     height: 16vh;
     width: 100vw;
-    background-color:rgb(252, 248, 244);
+    background-color:rgb(249, 248, 248);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -75,27 +74,66 @@ body{
     margin-right: 2vw;
     margin-top: 2vh;
 }
-.luxury{
+.intro{
+    backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    height: 155vh;
+    width: 50vw;
+    background: linear-gradient(to left,#fdf6ce,#fabe4d);  
+}
+.right{
+    background-image: url(necklace.jpg);
+    height: 155vh;
+    width: 90vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ .luxury{
     width: 20vw;
     height: 7vh;
-    margin-left:10vw;
-    background-color: antiquewhite;
+    margin-left:15vw;
+    margin-top: 8vh;
     text-align: center;
+    color: rgb(182, 144, 17); 
+    background: linear-gradient(135deg,
+        #f7d774,
+        #ecc047,
+        #f5d67a
+    );
+    border: 2px solid rgba(254, 211, 22, 0.851);
+    box-shadow:
+        0 8px 25px rgba(212,175,55,0.35),
+        inset 0 1px 2px rgba(255,255,255,0.5);
+
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: center;
     font-size: 1.5vw;
     padding: 1.5vh;
-    margin-top: 10vh;
-    margin-left: 20vw;
-    margin-bottom: 6vh;
-    border: 2px solid rgb(201,156,9);
-    color: rgb(201, 156, 9);
+    margin-bottom: 4vh;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h1{
     font-family:'Times New Roman', Times, serif;
-    font-weight: lighter;
-    padding-left: 20vw;
-    font-size: 6vw;
-    color:rgb(54, 54, 54);
+    font-weight: 100;
+    padding-left: 11.5vw;
+    font-size: 7.5vw;
+    color:rgb(46, 45, 45);
+    text-shadow: 0 0 15px rgb(243, 181, 27);
+    animation: move 2.6s ease;
+}
+@keyframes move{
+    from{
+        transform:translateX(-60vh);
+    }
+    to{
+        transform:translateX(0vh); 
+    }
 }
 .time{
     padding-top: 5vh;
@@ -108,34 +146,39 @@ h1{
 }
 .bar{
     height: 0.5vh;
-    width: 10vw;
-    background-color: rgb(201,157,6);
-    margin-top: 2.5vh;
-    margin-left: 20vw;
+    width: 20vw;
+    background-color: rgb(212, 168, 22);
+    margin-top: 8vh;
+    margin-left: 12vw;
 }
 .paragraph{
-    margin-left: 20vw;
-    margin-top: 5vh;
-    font-size: 1.9vw;
-    font-weight: 100;
-    color: rgb(92, 92, 92);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    word-spacing: 5px;
+    margin-left: 10vw;
+    margin-top: 8vh;
+    font-size: 1.6vw;
+    font-weight: 500;
+    color: rgb(154, 119, 5); 
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    word-spacing:5px;
+    
 }
 button.EXPLORE{
-    padding-left: 2.5vh;
+    padding-left: 5vh;
     margin-top: 5vh;
-    margin-left: 20vw;
+    margin-left: 13vw;
     height: 9.9vh;
-    width: 18vw;
-    background-color:antiquewhite;
+    width: 20vw;
+    background-color:rgb(249, 223, 186);
     border: 2px solid rgb(201, 156, 9);
     color: rgb(201, 156, 9);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.2vw;
     align-items: center;
+    text-align: center;
     display: flex;
     flex-direction: row;
+    border-radius: 10px;
+    z-index: 9999;
 }
 button.EXPLORE:hover{
     background-color:rgb(206, 161, 14);
@@ -148,31 +191,22 @@ button.EXPLORE:hover{
     width: 2vw;
     margin-left: 1vh;
 }
-.logo5:hover{
-    display: inline-block;
-    animation: moveArrow 1s infinite alternate;
-}
-@keyframes moveArrow {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(8px);
-  }
-}
 .div1{
     height: 300vh;
     width: 100vw;
-    background-image: url(body1.jpg);
+    background-size: cover;
+    clip-path: polygon(0 0, 85% 0, 50% 100%, 0 100%);
     background-size: cover;
 }
-.necklace{
-    background-image: url(necklace.jpg);
-    background-size: cover;
-    height: 160vh;
-    width: 80vw;
-    margin-top: 5vh;
-     margin-left: 9.5vw; 
+.div1::before{
+    content: "GOLD";
+    position: absolute;
+    left: -180px;
+    top: 40%;
+    transform: translateY(39%) rotate(90deg);
+    font-size: 220px;
+    color: rgba(0,0,0,0.06);
+    font-weight: bold;
 }
 .bar1{
     height: 0.4vh;
@@ -182,48 +216,21 @@ button.EXPLORE:hover{
     margin-left: 5vw;
     opacity: 0.5;
 }
-.divs{
+.stats{
+    margin-top: 6vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 10vh;
-    margin-left: 12vw;
-    font-size: 6vw;
-    color: rgb(22, 22, 22);
-    font-family:'Times New Roman', Times, serif;
-    font-weight: 550;
-}
-.h_1{
-    height: 20vh;
-    width: 20vw;
-}
-.h_2{
-    height: 20vh;
-    width: 20vw;
-}
-.h_3{
-    height: 20vh;
-    width: 20vw;
+    justify-content: space-between;
+    align-items: center;
 }
 .captions{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: rgb(65, 64, 64);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: space-around;
+    width: 100%;
+    color: rgb(65,64,64);
     font-weight: 600;
-}
-.legacy{
-    margin-right: 22vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: -5.5vh;
 }
 .pure{
-    margin-right: 10vw;
-}
-.masterpieces{
-    margin-right:10vw;
-}
-.details{
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
+    margin-left: 1vw;
 }
